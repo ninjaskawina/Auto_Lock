@@ -14,8 +14,12 @@ using namespace hFramework;
 void lock_toggle(){
     if(locked){
             //Open
+    hMot1.rotAbs(angle1, power, block);
+    hMot1.stopRegulation();
     LED1.on();
     } else{
+    hMot1.rotAbs(angle2, power, block);
+    hMot1.stopRegulation();
     LED1.off();
     }
     locked = !locked;
